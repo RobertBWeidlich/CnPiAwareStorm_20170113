@@ -1,0 +1,16 @@
+
+# Java
+target
+*.class
+*.jar
+*.war
+*.ear
+
+# IntelliJ
+.idea
+
+# Python
+*.pyc
+
+# vim backup files
+.swp
