@@ -42,7 +42,8 @@ public class LocalTopologyRunner {
         LocalCluster cluster = new LocalCluster();
         cluster.submitTopology("git-passthru-topology", config, topology);
 
-        Utils.sleep(60000);
+        //Utils.sleep(60000);
+        Utils.sleep(600000);
         cluster.killTopology("git-passthru-topology");
 
         // remove this comment

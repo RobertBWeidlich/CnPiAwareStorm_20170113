@@ -19,6 +19,7 @@ import java.util.Map;
 public class HelloWorldx5 extends BaseRichSpout {
     private SpoutOutputCollector outputCollector;
     private List<String> hwList;
+    private int iteration = 0;
 
     public void declareOutputFields(OutputFieldsDeclarer outputFieldsDeclarer) {
         outputFieldsDeclarer.declare(new Fields("hws"));
@@ -31,12 +32,17 @@ public class HelloWorldx5 extends BaseRichSpout {
         //
         //hwList = new ArrayList<String>();
         // List<String> messages = Arrays.asList("Hello", "World!", "How", "Are", "You");
-        hwList = Arrays.asList("Hello World-1", "Hello World-2", "Hello World-3", "Hello World-4", "HelloWorld-5");
+        hwList = Arrays.asList("Hello World-1", "Hello World-2", "Hello World-3", "Hello World-4", "Hello World-5");
     }
 
     public void nextTuple() {
+        this.iteration++;
         for (String hw : hwList) {
-            outputCollector.emit(new Values(hw));
+            //hww = hw + "_" + Integer.toString(this.iter)
+            String hww = hw + "-" + Integer.toString(this.iteration);
+            outputCollector.emit(new Values(hww));
         }
+        //Utils.sleep(1000);
+        int a = 7;
     }
 }
