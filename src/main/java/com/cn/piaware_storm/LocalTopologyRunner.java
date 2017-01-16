@@ -44,5 +44,7 @@ public class LocalTopologyRunner {
 
         Utils.sleep(60000);
         cluster.killTopology("git-passthru-topology");
+
+        // remove this comment
     }
 }
